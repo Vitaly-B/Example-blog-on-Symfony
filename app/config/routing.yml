@@ -1,0 +1,41 @@
+admin_delete_post:
+    path:   /admin/delete/{id}
+    defaults: {  _controller: AppBundle:Admin\Post:delete }
+    requirements:
+            id: '\d+'
+
+admin_update_post:
+    path:   /admin/update/{id}
+    defaults: {  _controller: AppBundle:Admin\Post:update }
+    requirements:
+            id: '\d+'
+
+admin_add_post:
+    path:   /admin/add
+    defaults: {  _controller: AppBundle:Admin\Post:add }
+
+admin_index:
+    path:   /admin/{page}
+    defaults: {  _controller: AppBundle:Admin\Post:index,  page: 1 }
+    requirements:
+            id: '\d+'
+
+login:
+    path:   /login
+    defaults: {  _controller: AppBundle:Security:login }
+
+logout:
+    path:   /logout
+    defaults: {  _controller: AppBundle:Security:logout }
+
+view_post:
+    path:     /post/{id}
+    defaults: { _controller: AppBundle:Default:view }
+    requirements:
+        id: '\d+'
+
+homepage:
+    path:     /{page}
+    defaults: { _controller: AppBundle:Default:index,  page: 1 }
+    requirements:
+            id: '\d+'

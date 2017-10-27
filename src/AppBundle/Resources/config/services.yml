@@ -1,0 +1,13 @@
+parameters:
+
+services:
+      app.managers.post_manager:
+          class: AppBundle\Managers\PostManager
+          arguments:
+              - '@doctrine.orm.entity_manager'
+              - AppBundle\Entity\Post
+
+      app.pagerfanta.template_default:
+          class: AppBundle\Pagerfanta\DefaultView
+          public: false
+          tags: [{ name: 'pagerfanta.view', alias: 'app_pagerfanta_template_default'}]
